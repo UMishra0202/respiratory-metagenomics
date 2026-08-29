@@ -1,14 +1,16 @@
 # Respiratory Metagenomics: Pathogen Evidence Analysis
 
+A reference-based shotgun metagenomics workflow for evaluating computational evidence of respiratory pathogens from paired-end sequencing data.
+
 ## Overview
 
-This project analyzes paired-end shotgun metagenomic sequencing data from a respiratory sample to investigate computational evidence for respiratory pathogens using reference-based read mapping.
+This project analyzes paired-end shotgun metagenomic sequencing data from a respiratory sample to investigate computational evidence for respiratory pathogens using targeted reference-based read mapping.
 
 Rather than treating read alignment alone as evidence of infection, the workflow evaluates pathogen-specific mapping using alignment quality, genome-wide coverage, and read depth to distinguish stronger signals from low-level or tentative mapping evidence.
 
 ## Research Question
 
-Can pathogen-specific reference mapping and genome-wide coverage analysis identify robust sequencing evidence for respiratory pathogens in shotgun metagenomic data?
+> Can pathogen-specific reference mapping and genome-wide coverage analysis identify robust sequencing evidence for respiratory pathogens in shotgun metagenomic data?
 
 ## Dataset
 
@@ -23,11 +25,11 @@ Can pathogen-specific reference mapping and genome-wide coverage analysis identi
 
 The reference panel included representative genomes from:
 
-- Streptococcus pneumoniae
-- Haemophilus influenzae
-- Staphylococcus aureus
-- Pseudomonas aeruginosa
-- Moraxella catarrhalis
+- *Streptococcus pneumoniae*
+- *Haemophilus influenzae*
+- *Staphylococcus aureus*
+- *Pseudomonas aeruginosa*
+- *Moraxella catarrhalis*
 - Rhinovirus C
 - SARS-CoV-2
 - Respiratory syncytial virus A
@@ -39,31 +41,31 @@ The reference panel included representative genomes from:
 Paired-end metagenomic reads
             |
             v
-         Read QC
+        Read QC
             |
             v
     Read preprocessing
             |
             v
-      Host depletion
+       Host depletion
             |
             v
- Target pathogen references
+  Target pathogen references
             |
             v
-      BWA-MEM alignment
+       BWA-MEM alignment
             |
             v
-       SAM/BAM sorting
+      SAM/BAM sorting
             |
             v
-       MAPQ >= 20 filtering
+      MAPQ >= 20 filtering
             |
             v
  Genome-wide coverage + depth
             |
             v
-   Pathogen evidence ranking
+  Pathogen evidence ranking
             |
             v
  Visualization + interpretation
