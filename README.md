@@ -69,7 +69,7 @@ Paired-end metagenomic reads
             |
             v
  Visualization + interpretation
-
+```
 
 ## Key Results
 
