@@ -1,0 +1,6 @@
+Pathogen,Mapped_Reads,Mapped_Read_Share_Percent,Coverage_Percent,Mean_Depth
+Streptococcus pneumoniae,168138,92.65026780400714,72.2441,10.1926
+Haemophilus influenzae,10557,5.817298155127951,25.3743,0.761653
+Staphylococcus aureus,1875,1.033194471996297,0.785913,0.0854464
+Pseudomonas aeruginosa,711,0.39178734378099583,0.682858,0.013951
+Moraxella catarrhalis,195,0.10745222508761489,0.301355,0.009619
