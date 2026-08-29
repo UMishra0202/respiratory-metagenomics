@@ -83,8 +83,15 @@ ax.scatter(
     s=80
 )
 
+   # Add pathogen labels with staggered offsets
+label_offsets = {
+    "Streptococcus pneumoniae": (8, 8),
+    "Haemophilus influenzae": (8, 8),
+    "Staphylococcus aureus": (8, 14),
+    "Pseudomonas aeruginosa": (8, -18),
+    "Moraxella catarrhalis": (8, 8),
+}
 
-# Add pathogen labels
 for _, row in df.iterrows():
 
     coverage = row["Coverage_Percent"]
@@ -92,13 +99,18 @@ for _, row in df.iterrows():
     if pd.isna(coverage):
         continue
 
+    offset = label_offsets.get(
+        row["Pathogen"],
+        (8, 8)
+    )
+
     ax.annotate(
         row["Pathogen"],
         (
             row["Mapped_Reads"],
             coverage
         ),
-        xytext=(6, 6),
+        xytext=offset,
         textcoords="offset points",
         fontsize=9
     )
@@ -115,7 +127,7 @@ ax.set_ylabel(
 )
 
 ax.set_title(
-    "Pathogen Evidence: Mapped Reads vs Genome Coverage"
+    "Reference-Based Pathogen Evidence: Mapped Reads vs Genome Coverage"
 )
 
 ax.grid(

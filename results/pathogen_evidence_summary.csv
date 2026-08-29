@@ -1,0 +1,6 @@
+Pathogen,Mapped_Reads,Mapped_Read_Share_Percent,Coverage_Percent,Coverage_5x_Percent,Coverage_10x_Percent,Mean_Depth,Evidence_Interpretation
+Streptococcus pneumoniae,168138,92.65026780400714,72.2441,47.564528218645265,25.931126382345592,10.1926,Strong computational evidence
+Haemophilus influenzae,10557,5.817298155127951,25.3743,4.903072883028493,0.9400930421640336,0.761653,Secondary / tentative evidence
+Staphylococcus aureus,1875,1.033194471996297,0.785913,,,0.0854464,Minimal mapped-read signal
+Pseudomonas aeruginosa,711,0.3917873437809958,0.682858,,,0.013951,Minimal mapped-read signal
+Moraxella catarrhalis,195,0.1074522250876148,0.301355,,,0.009619,Minimal mapped-read signal
