@@ -52,3 +52,6 @@ results/coverage/*.bed
 
 # FastQC archives
 results/qc/**/*.zip
+
+# QC reports
+results/qc/
