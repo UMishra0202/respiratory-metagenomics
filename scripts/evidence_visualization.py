@@ -83,13 +83,16 @@ ax.scatter(
     s=80
 )
 
-   # Add pathogen labels with staggered offsets
-label_offsets = {
-    "Streptococcus pneumoniae": (8, 8),
-    "Haemophilus influenzae": (8, 8),
-    "Staphylococcus aureus": (8, 14),
-    "Pseudomonas aeruginosa": (8, -18),
-    "Moraxella catarrhalis": (8, 8),
+  # ------------------------------------------------------------
+# Add pathogen labels with manual positions
+# ------------------------------------------------------------
+
+label_positions = {
+    "Streptococcus pneumoniae": (95000, 74),
+    "Haemophilus influenzae": (15000, 28),
+    "Staphylococcus aureus": (2600, 6.0),
+    "Pseudomonas aeruginosa": (850, -4.0),
+    "Moraxella catarrhalis": (230, 3.0),
 }
 
 for _, row in df.iterrows():
@@ -99,24 +102,33 @@ for _, row in df.iterrows():
     if pd.isna(coverage):
         continue
 
-    offset = label_offsets.get(
-        row["Pathogen"],
-        (8, 8)
-    )
+    pathogen = row["Pathogen"]
+
+    if pathogen not in label_positions:
+        continue
 
     ax.annotate(
-        row["Pathogen"],
-        (
+        pathogen,
+        xy=(
             row["Mapped_Reads"],
             coverage
         ),
-        xytext=offset,
-        textcoords="offset points",
-        fontsize=9
+        xytext=label_positions[pathogen],
+        textcoords="data",
+        fontsize=9,
+        arrowprops=dict(
+            arrowstyle="-",
+            linewidth=0.8
+        )
     )
 
 
 ax.set_xscale("log")
+
+ax.set_xlim(
+    df["Mapped_Reads"].min() * 0.7,
+    df["Mapped_Reads"].max() * 2.0
+)
 
 ax.set_xlabel(
     "Mapped reads (log scale)"
@@ -125,6 +137,8 @@ ax.set_xlabel(
 ax.set_ylabel(
     "Genome coverage (%)"
 )
+
+ax.set_ylim(-7, 78)
 
 ax.set_title(
     "Reference-Based Pathogen Evidence: Mapped Reads vs Genome Coverage"
