@@ -1,0 +1,54 @@
+# Raw sequencing data
+*.fastq
+*.fastq.gz
+*.fq
+*.fq.gz
+
+# Alignment files
+*.sam
+*.bam
+*.bai
+*.bt2
+*.bt2l
+
+# Temporary files
+*.tmp
+
+# Large intermediate files
+results/host_depletion/
+results/mapping/*.sam
+results/mapping/*.bam
+
+# OS / editor files
+.DS_Store
+*.swp
+
+# Local sequencing/reference data
+data/
+
+# Large result/intermediate files
+results/host_depletion/
+results/mapping/*.sam
+results/mapping/*.bam
+results/mapping/*.bai
+
+# Large coverage/depth intermediate files
+results/coverage/*.tsv
+results/coverage/*.bed
+
+# Keep GitHub repository lightweight
+*.fastq
+*.fastq.gz
+*.fq
+*.fq.gz
+*.fasta
+*.fa
+*.fna
+*.sam
+*.bam
+*.bai
+*.bt2
+*.bt2l
+
+# FastQC archives
+results/qc/**/*.zip

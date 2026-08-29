@@ -1,0 +1,10 @@
+Pathogen,Accession,Mapped_Reads,Coverage_Percent,Mean_Depth
+Haemophilus influenzae,NC_000907.1,10557,25.3743,0.761653
+Moraxella catarrhalis,CP008804.1,195,0.301355,0.009619
+Pseudomonas aeruginosa,NC_002516.2,711,0.682858,0.013951
+Staphylococcus aureus,NC_002745.2,1875,0.785913,0.0854464
+Streptococcus pneumoniae,NC_011900.1,168138,72.2441,10.1926
+Human metapneumovirus,NC_039199.1,0,0,0
+Respiratory syncytial virus A,NC_001803.1,0,0,0
+SARS-CoV-2,NC_045512.2,0,0,0
+Rhinovirus C,NC_009996.1,0,0,0
