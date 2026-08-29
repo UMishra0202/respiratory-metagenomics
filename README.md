@@ -89,3 +89,23 @@ The analysis identified substantial differences in pathogen-specific mapping evi
 - The results demonstrate why **mapped-read count alone is insufficient** for interpreting metagenomic pathogen evidence; genome-wide coverage and read depth provide important additional context.
 
 These findings represent computational sequencing evidence from reference-based mapping and **should not be interpreted as a clinical diagnosis or confirmation of infection**.
+
+## Results Visualization
+
+### Pathogen Evidence Overview
+
+The combined analysis shows substantial variation in pathogen-specific sequencing evidence across the targeted reference panel. *Streptococcus pneumoniae* produced the strongest signal, with substantially higher mapped-read counts and genome-wide coverage than the other screened organisms.
+
+![Pathogen evidence overview](results/figures/final_pathogen_evidence.png)
+
+### Mapped Reads vs Genome Coverage
+
+Mapped-read abundance was evaluated together with genome-wide coverage to distinguish concentrated mapping signals from broader reference-genome representation.
+
+![Mapped reads versus genome coverage](results/figures/pathogen_evidence_overview.png)
+
+### Genome-wide Coverage of Streptococcus pneumoniae
+
+For the strongest computational signal, genome-wide read depth was examined across the *S. pneumoniae* reference genome following MAPQ filtering.
+
+![Streptococcus pneumoniae genome-wide coverage](results/figures/streptococcus_pneumoniae_coverage.png)
