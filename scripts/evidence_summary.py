@@ -24,8 +24,10 @@ abundance = pd.read_csv(INPUT_ABUNDANCE)
 coverage_metrics = coverage[
     [
         "Pathogen",
+        "Coverage_Percent",
         "Coverage_5x_Percent",
-        "Coverage_10x_Percent"
+        "Coverage_10x_Percent",
+        "Mean_Depth"
     ]
 ]
 
@@ -36,7 +38,20 @@ coverage_metrics = coverage[
 evidence = abundance.merge(
     coverage_metrics,
     on="Pathogen",
-    how="left"
+    how="left",
+    suffixes=("_abundance", "_coverage")
+)
+
+evidence["Coverage_Percent"] = evidence["Coverage_Percent_coverage"]
+evidence["Mean_Depth"] = evidence["Mean_Depth_coverage"]
+
+evidence = evidence.drop(
+    columns=[
+        "Coverage_Percent_abundance",
+        "Mean_Depth_abundance",
+        "Coverage_Percent_coverage",
+        "Mean_Depth_coverage"
+    ]
 )
 
 # ------------------------------------------------------------
